@@ -23,8 +23,8 @@ export class StudentsComponent {
   }
 
   private loadStudents() {
-    var studentSubscription = this.studentService.getStudents().subscribe(students => {
-      this.students = students;
+    var studentSubscription = this.studentService.getStudents().subscribe(response => {
+      this.students = response.students;
     });
     this.subscription.add(studentSubscription);
   }

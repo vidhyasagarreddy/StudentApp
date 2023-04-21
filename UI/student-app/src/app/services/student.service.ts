@@ -9,7 +9,7 @@ export class StudentService {
   }
 
   getStudents() {
-    return this.http.get<IStudent[]>(`${environment.apiUrl}data`);
+    return this.http.get<IStudentReponse>(`${environment.apiUrl}data`);
   }
 }
 
@@ -17,4 +17,8 @@ export interface IStudent {
   name: string;
   age: number;
   hobbies: string[];
+}
+
+export interface IStudentReponse {
+  students: IStudent[];
 }

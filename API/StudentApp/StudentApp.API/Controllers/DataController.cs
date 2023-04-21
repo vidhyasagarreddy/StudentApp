@@ -8,7 +8,7 @@ namespace StudentApp.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult<IEnumerable<Student>> Get()
+        public ActionResult<object> Get()
         {
             var students = new List<Student>
             {
@@ -26,7 +26,7 @@ namespace StudentApp.Controllers
                 }
             };
 
-            return Ok(students);
+            return Ok(new { students });
         }
     }
 }
